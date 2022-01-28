@@ -129,31 +129,6 @@
     
     
     <entry>
-      <title>吐血整理IDEA必备插件(๑•̀ㅂ•́)و✧，让撸码效率提升1000%</title>
-      <link href="/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86IDEA%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6/"/>
-      <url>/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86IDEA%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p>俗话说：“工欲善其事，必先利其器”，好的开发工具能让我们的工作效率翻倍，而好的开发工具加上优秀的插件，能让我们的工作效率提升十倍（<del>(@^_^@)</del>我要打十个），这也是我们区别于其他程序猿的必备工具，下面就是我从十余年工作中总结出来的好用的idea插件（好像工作的前五年我用的都是eclipse，哈哈(╯&gt;д&lt;)╯⁽˙³˙⁾，这不重要！）。插件主要分为：代码生成类，日常开发类，主题美化类，以下插件大都可以通过 IDEA 自带的插件管理中心安装，如果搜不到可以去 <a href="https://plugins.jetbrains.com/">IDEA 插件官网</a>下载本地导入。星号代表我个人的推荐指数 。 </p><h2 id="代码生成"><a href="#代码生成" class="headerlink" title="代码生成"></a>代码生成</h2><h3 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>自动生成get、set方法</p></li></ul><h3 id="EasyCode"><a href="#EasyCode" class="headerlink" title="EasyCode"></a>EasyCode</h3><ul><li><p>推荐指数：★★</p></li><li><p>数据库逆向工程</p></li></ul><h3 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>通过json生成实体类</p></li></ul><h3 id="Codota"><a href="#Codota" class="headerlink" title="Codota"></a>Codota</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>代码提示</p></li></ul><p>该插件的强大之处在于：</p><ol><li>支持智能代码自动提示，该功能可以增强 IDEA 的代码提示功能；</li><li>支持 JDK 和知名第三方库的函数的使用方法搜索，可以看到其他知名开源项目对该函数的用法。</li></ol><p>当我们第一次使用某个类，对某个函数不够熟悉时，可以通过该插件搜索相关用法，快速模仿学习，使用方法：右键要搜索的类，选择 <em>Get relevant exanples</em> </p><h3 id="GenerateAllSetter"><a href="#GenerateAllSetter" class="headerlink" title="GenerateAllSetter"></a>GenerateAllSetter</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>变量自动生成set方法</p></li></ul><p><a href="https://github.com/gejun123456/intellij-generateAllSetMethod">插件官网地址</a> 。我们定义好从 A 类转换到 B 类的函数转换函数后，使用这两个插件可以自动调用 Getter 和 Setter 函数实行自动转换。实际开发中还有一个非常常见的场景：我们创建一个对象后，想依次调用 Setter 函数对属性赋值，如果属性较多很容易遗漏或者重复。可以使用GenerateAllSetter 提供的功能，自动调用所有 Setter 函数（可填充默认值），然后自己再跟进实际需求设置属性值。</p><h3 id="ignore"><a href="#ignore" class="headerlink" title=".ignore"></a>.ignore</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>git提交时过滤掉不需要提交的文件，很方便，有些本地文件是不需要提交到Git上的，插件：ProjectView涵盖了此功能</p></li></ul><h3 id="CamelCase"><a href="#CamelCase" class="headerlink" title="CamelCase"></a>CamelCase</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>将不是驼峰格式的名称，快速转成驼峰格式，安装好后，选中要修改的名称，按快捷键shift+alt+u。</p></li></ul><h2 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h2><h3 id="Alibaba-Java-Coding-Guidelines"><a href="#Alibaba-Java-Coding-Guidelines" class="headerlink" title="Alibaba Java Coding Guidelines"></a>Alibaba Java Coding Guidelines</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：代码规范插件</p></li></ul><h3 id="jclasslib-bytecode-viewer"><a href="#jclasslib-bytecode-viewer" class="headerlink" title="jclasslib bytecode viewer"></a>jclasslib bytecode viewer</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：可视化的字节码查看插件</p></li></ul><p><strong>使用方法</strong>：</p><ol><li>在 IDEA 打开想研究的类；</li><li>编译该类或者直接编译整个项目（ 如果想研究的类在 jar 包中，此步可略过）；</li><li>打开“view” 菜单，选择“Show Bytecode With jclasslib” 选项；</li><li>选择上述菜单项后 IDEA 中会弹出 jclasslib 工具窗口。</li></ol><p>那么有自带的强大的反汇编工具 javap 还有必要用这个插件吗？</p><p>这个插件的<strong>强大之处</strong>在于：</p><ol><li>不需要敲命令，简单直接，在右侧方便和源代码进行对比学习；</li><li>字节码命令支持超链接，<strong>点击其中的虚拟机指令即可跳转到 jvms 相关章节</strong>，超级方便。</li></ol><p>该插件对我们学习虚拟机指令有极大的帮助。</p><h3 id="FindBugs"><a href="#FindBugs" class="headerlink" title="FindBugs"></a>FindBugs</h3><ul><li>推荐指数：★★</li><li>插件功能：查找代码bug</li></ul><p>程序员总是想尽可能地避免写 BUG， FindBugs 作为静态代码检查插件，可以检查你代码中的隐患，并给出原因。</p><h3 id="SonarLine"><a href="#SonarLine" class="headerlink" title="SonarLine"></a>SonarLine</h3><ul><li><p>推荐指数：★★</p></li><li><p>插件功能：代码质量管理工具</p></li></ul><h2 id="日常开发"><a href="#日常开发" class="headerlink" title="日常开发"></a>日常开发</h2><h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>插件功能：翻译</p></li></ul><h3 id="Jrebel"><a href="#Jrebel" class="headerlink" title="Jrebel"></a>Jrebel</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：热部署</p></li></ul><h3 id="Key-Promoter-X"><a href="#Key-Promoter-X" class="headerlink" title="Key Promoter X"></a>Key Promoter X</h3><ul><li><p>推荐指数：★★</p></li><li><p>插件功能：快捷键提示</p></li></ul><h3 id="MyBatis-Log-Plugin"><a href="#MyBatis-Log-Plugin" class="headerlink" title="MyBatis Log Plugin"></a>MyBatis Log Plugin</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>插件功能：打印sql</p></li></ul><h3 id="MyBatisX"><a href="#MyBatisX" class="headerlink" title="MyBatisX"></a>MyBatisX</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>插件功能：Mapper跳转Dao</p></li></ul><h3 id="Maven-Search"><a href="#Maven-Search" class="headerlink" title="Maven Search"></a>Maven Search</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>插件功能：查询maven</p></li></ul><h3 id="Maven-Helper"><a href="#Maven-Helper" class="headerlink" title="Maven Helper"></a>Maven Helper</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>插件功能：依赖关系图</p></li></ul><p>安装后 IDEA 中打开 pom.xml 文件时，就会多出一个 “Dependency Analyzer” 选项卡。</p><h3 id="SequenceDiagram"><a href="#SequenceDiagram" class="headerlink" title="SequenceDiagram"></a>SequenceDiagram</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>插件功能：时序图</p></li></ul><p>SequenceDiagram 可以根据代码调用链路自动生成时序图，超级赞，超级推荐！这对研究源码，梳理工作中的业务代码有极大的帮助，堪称神器。安装完成后，在某个类的某个函数中，右键 –&gt; Sequence Diagaram 即可调出。</p><h2 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h2><h3 id="Active-power-mode"><a href="#Active-power-mode" class="headerlink" title="Active power mode"></a>Active power mode</h3><ul><li><p>推荐指数：★★</p></li><li><p>插件功能：打字特效</p></li></ul><h3 id="Rainbow-Branckets"><a href="#Rainbow-Branckets" class="headerlink" title="Rainbow Branckets"></a>Rainbow Branckets</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：彩虹扩号</p></li></ul><p><a href="https://github.com/izhangzhihao/intellij-rainbow-brackets">插件github地址</a> 。由于很多人没有养成好的编码风格，没有随手 format 代码的习惯，甚至有些同事会写代码超过几百行，阅读起来将非常痛苦。痛苦的原因之一就是找到上下文，由于括号太多，不确定当前代码行是否属于某个代码块，此时这个插件就会帮上大忙。双击顶部的类名可以跳转到对应类的源码中，双击调用的函数名可以直接调入某个函数的源码，总之非常强大。</p><h3 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a>CodeGlance</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：代码迷你小地图</p></li></ul><p>类似于sublime的右侧代码小地图，CodeGlance2为原版加强</p><h3 id="Xcode-Drak-theme"><a href="#Xcode-Drak-theme" class="headerlink" title="Xcode Drak theme"></a>Xcode Drak theme</h3><ul><li><p>推荐指数：★</p></li><li><p>插件功能：主题</p></li></ul><h3 id="Material-Theme-UI"><a href="#Material-Theme-UI" class="headerlink" title="Material Theme UI"></a>Material Theme UI</h3><ul><li><p>推荐指数：★</p></li><li><p>插件功能：多种主题</p></li></ul><p>对于很多人而言，写代码时略显枯燥的，如果能够安装自己喜欢的主题将为开发工作带来些许乐趣。IDEA 支持各种主题插件，其中最出名的当属 Material Theme UI。安装后，可以从该插件内置的各种风格个选择自己最喜欢的一种。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 软件工具 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>军事级别安全强度，免费密码管理工具KeePass，永远滴神</title>
       <link href="/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%85%8D%E8%B4%B9%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%A5%9E/"/>
       <url>/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%85%8D%E8%B4%B9%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%A5%9E/</url>
@@ -179,11 +154,11 @@
     
     
     <entry>
-      <title>企业开发规范和技巧</title>
-      <link href="/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
-      <url>/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/</url>
+      <title>吐血整理IDEA必备插件(๑•̀ㅂ•́)و✧，让撸码效率提升1000%</title>
+      <link href="/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86IDEA%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6/"/>
+      <url>/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86IDEA%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6/</url>
       
-        <content type="html"><![CDATA[<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​        没有看过<a href="https://developer.aliyun.com/topic/java20?utm_content=g_1000163107">阿里开发规范</a>的同学可以先阅读一遍规范里面的内容，《Java 开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一 线实战的检验及不断完善，公开到业界后，众多社区开发者踊跃参与，共同打磨完善，系统化地整理 成册。为提高软件的最终交付质量，五花八门的错误码人为地 增加排查问题的难度;数据库的表结构和索引设计缺陷带来的系统架构缺陷或性能风险;工程结构混 乱导致后续项目维护艰难;没有鉴权的漏洞代码易被黑客攻击等等，制定一套开发规范出来还是很有必要的，对于增强代码的可读性，提高项目的维护成本，提高问题的排查速度，都会有重要的作用。</p><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3>]]></content>
+        <content type="html"><![CDATA[<p>俗话说：“工欲善其事，必先利其器”，好的开发工具能让我们的工作效率翻倍，而好的开发工具加上优秀的插件，能让我们的工作效率提升十倍（<del>(@^_^@)</del>我要打十个），这也是我们区别于其他程序猿的必备工具，下面就是我从十余年工作中总结出来的好用的idea插件（好像工作的前五年我用的都是eclipse，哈哈(╯&gt;д&lt;)╯⁽˙³˙⁾，这不重要！）。插件主要分为：代码生成类，日常开发类，主题美化类，以下插件大都可以通过 IDEA 自带的插件管理中心安装，如果搜不到可以去 <a href="https://plugins.jetbrains.com/">IDEA 插件官网</a>下载本地导入。星号代表我个人的推荐指数 。 </p><h2 id="代码生成"><a href="#代码生成" class="headerlink" title="代码生成"></a>代码生成</h2><h3 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>自动生成get、set方法</p></li></ul><h3 id="EasyCode"><a href="#EasyCode" class="headerlink" title="EasyCode"></a>EasyCode</h3><ul><li><p>推荐指数：★★</p></li><li><p>数据库逆向工程</p></li></ul><h3 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>通过json生成实体类</p></li></ul><h3 id="Codota"><a href="#Codota" class="headerlink" title="Codota"></a>Codota</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>代码提示</p></li></ul><p>该插件的强大之处在于：</p><ol><li>支持智能代码自动提示，该功能可以增强 IDEA 的代码提示功能；</li><li>支持 JDK 和知名第三方库的函数的使用方法搜索，可以看到其他知名开源项目对该函数的用法。</li></ol><p>当我们第一次使用某个类，对某个函数不够熟悉时，可以通过该插件搜索相关用法，快速模仿学习，使用方法：右键要搜索的类，选择 <em>Get relevant exanples</em> </p><h3 id="GenerateAllSetter"><a href="#GenerateAllSetter" class="headerlink" title="GenerateAllSetter"></a>GenerateAllSetter</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>变量自动生成set方法</p></li></ul><p><a href="https://github.com/gejun123456/intellij-generateAllSetMethod">插件官网地址</a> 。我们定义好从 A 类转换到 B 类的函数转换函数后，使用这两个插件可以自动调用 Getter 和 Setter 函数实行自动转换。实际开发中还有一个非常常见的场景：我们创建一个对象后，想依次调用 Setter 函数对属性赋值，如果属性较多很容易遗漏或者重复。可以使用GenerateAllSetter 提供的功能，自动调用所有 Setter 函数（可填充默认值），然后自己再跟进实际需求设置属性值。</p><h3 id="ignore"><a href="#ignore" class="headerlink" title=".ignore"></a>.ignore</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>git提交时过滤掉不需要提交的文件，很方便，有些本地文件是不需要提交到Git上的，插件：ProjectView涵盖了此功能</p></li></ul><h3 id="CamelCase"><a href="#CamelCase" class="headerlink" title="CamelCase"></a>CamelCase</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>将不是驼峰格式的名称，快速转成驼峰格式，安装好后，选中要修改的名称，按快捷键shift+alt+u。</p></li></ul><h2 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h2><h3 id="Alibaba-Java-Coding-Guidelines"><a href="#Alibaba-Java-Coding-Guidelines" class="headerlink" title="Alibaba Java Coding Guidelines"></a>Alibaba Java Coding Guidelines</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：代码规范插件</p></li></ul><h3 id="jclasslib-bytecode-viewer"><a href="#jclasslib-bytecode-viewer" class="headerlink" title="jclasslib bytecode viewer"></a>jclasslib bytecode viewer</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：可视化的字节码查看插件</p></li></ul><p><strong>使用方法</strong>：</p><ol><li>在 IDEA 打开想研究的类；</li><li>编译该类或者直接编译整个项目（ 如果想研究的类在 jar 包中，此步可略过）；</li><li>打开“view” 菜单，选择“Show Bytecode With jclasslib” 选项；</li><li>选择上述菜单项后 IDEA 中会弹出 jclasslib 工具窗口。</li></ol><p>那么有自带的强大的反汇编工具 javap 还有必要用这个插件吗？</p><p>这个插件的<strong>强大之处</strong>在于：</p><ol><li>不需要敲命令，简单直接，在右侧方便和源代码进行对比学习；</li><li>字节码命令支持超链接，<strong>点击其中的虚拟机指令即可跳转到 jvms 相关章节</strong>，超级方便。</li></ol><p>该插件对我们学习虚拟机指令有极大的帮助。</p><h3 id="FindBugs"><a href="#FindBugs" class="headerlink" title="FindBugs"></a>FindBugs</h3><ul><li>推荐指数：★★</li><li>插件功能：查找代码bug</li></ul><p>程序员总是想尽可能地避免写 BUG， FindBugs 作为静态代码检查插件，可以检查你代码中的隐患，并给出原因。</p><h3 id="SonarLine"><a href="#SonarLine" class="headerlink" title="SonarLine"></a>SonarLine</h3><ul><li><p>推荐指数：★★</p></li><li><p>插件功能：代码质量管理工具</p></li></ul><h2 id="日常开发"><a href="#日常开发" class="headerlink" title="日常开发"></a>日常开发</h2><h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>插件功能：翻译</p></li></ul><h3 id="Jrebel"><a href="#Jrebel" class="headerlink" title="Jrebel"></a>Jrebel</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：热部署</p></li></ul><h3 id="Key-Promoter-X"><a href="#Key-Promoter-X" class="headerlink" title="Key Promoter X"></a>Key Promoter X</h3><ul><li><p>推荐指数：★★</p></li><li><p>插件功能：快捷键提示</p></li></ul><h3 id="MyBatis-Log-Plugin"><a href="#MyBatis-Log-Plugin" class="headerlink" title="MyBatis Log Plugin"></a>MyBatis Log Plugin</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>插件功能：打印sql</p></li></ul><h3 id="MyBatisX"><a href="#MyBatisX" class="headerlink" title="MyBatisX"></a>MyBatisX</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>插件功能：Mapper跳转Dao</p></li></ul><h3 id="Maven-Search"><a href="#Maven-Search" class="headerlink" title="Maven Search"></a>Maven Search</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>插件功能：查询maven</p></li></ul><h3 id="Maven-Helper"><a href="#Maven-Helper" class="headerlink" title="Maven Helper"></a>Maven Helper</h3><ul><li><p>推荐指数：★★★★★</p></li><li><p>插件功能：依赖关系图</p></li></ul><p>安装后 IDEA 中打开 pom.xml 文件时，就会多出一个 “Dependency Analyzer” 选项卡。</p><h3 id="SequenceDiagram"><a href="#SequenceDiagram" class="headerlink" title="SequenceDiagram"></a>SequenceDiagram</h3><ul><li><p>推荐指数：★★★★</p></li><li><p>插件功能：时序图</p></li></ul><p>SequenceDiagram 可以根据代码调用链路自动生成时序图，超级赞，超级推荐！这对研究源码，梳理工作中的业务代码有极大的帮助，堪称神器。安装完成后，在某个类的某个函数中，右键 –&gt; Sequence Diagaram 即可调出。</p><h2 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h2><h3 id="Active-power-mode"><a href="#Active-power-mode" class="headerlink" title="Active power mode"></a>Active power mode</h3><ul><li><p>推荐指数：★★</p></li><li><p>插件功能：打字特效</p></li></ul><h3 id="Rainbow-Branckets"><a href="#Rainbow-Branckets" class="headerlink" title="Rainbow Branckets"></a>Rainbow Branckets</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：彩虹扩号</p></li></ul><p><a href="https://github.com/izhangzhihao/intellij-rainbow-brackets">插件github地址</a> 。由于很多人没有养成好的编码风格，没有随手 format 代码的习惯，甚至有些同事会写代码超过几百行，阅读起来将非常痛苦。痛苦的原因之一就是找到上下文，由于括号太多，不确定当前代码行是否属于某个代码块，此时这个插件就会帮上大忙。双击顶部的类名可以跳转到对应类的源码中，双击调用的函数名可以直接调入某个函数的源码，总之非常强大。</p><h3 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a>CodeGlance</h3><ul><li><p>推荐指数：★★★</p></li><li><p>插件功能：代码迷你小地图</p></li></ul><p>类似于sublime的右侧代码小地图，CodeGlance2为原版加强</p><h3 id="Xcode-Drak-theme"><a href="#Xcode-Drak-theme" class="headerlink" title="Xcode Drak theme"></a>Xcode Drak theme</h3><ul><li><p>推荐指数：★</p></li><li><p>插件功能：主题</p></li></ul><h3 id="Material-Theme-UI"><a href="#Material-Theme-UI" class="headerlink" title="Material Theme UI"></a>Material Theme UI</h3><ul><li><p>推荐指数：★</p></li><li><p>插件功能：多种主题</p></li></ul><p>对于很多人而言，写代码时略显枯燥的，如果能够安装自己喜欢的主题将为开发工作带来些许乐趣。IDEA 支持各种主题插件，其中最出名的当属 Material Theme UI。安装后，可以从该插件内置的各种风格个选择自己最喜欢的一种。</p>]]></content>
       
       
       <categories>
@@ -195,7 +170,7 @@
       
         <tags>
             
-            <tag> 开发 </tag>
+            <tag> 软件工具 </tag>
             
         </tags>
       
@@ -221,6 +196,31 @@
         <tags>
             
             <tag> 后端技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>企业开发规范和技巧</title>
+      <link href="/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
+      <url>/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​        没有看过<a href="https://developer.aliyun.com/topic/java20?utm_content=g_1000163107">阿里开发规范</a>的同学可以先阅读一遍规范里面的内容，《Java 开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一 线实战的检验及不断完善，公开到业界后，众多社区开发者踊跃参与，共同打磨完善，系统化地整理 成册。为提高软件的最终交付质量，五花八门的错误码人为地 增加排查问题的难度;数据库的表结构和索引设计缺陷带来的系统架构缺陷或性能风险;工程结构混 乱导致后续项目维护艰难;没有鉴权的漏洞代码易被黑客攻击等等，制定一套开发规范出来还是很有必要的，对于增强代码的可读性，提高项目的维护成本，提高问题的排查速度，都会有重要的作用。</p><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
             
         </tags>
       
@@ -264,6 +264,31 @@
       <categories>
           
           <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 后端技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中的各种O</title>
+      <link href="/2021/10/29/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/0%E3%80%81Java%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8DO/"/>
+      <url>/2021/10/29/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/0%E3%80%81Java%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8DO/</url>
+      
+        <content type="html"><![CDATA[<h1 id="0、Java中的各种O"><a href="#0、Java中的各种O" class="headerlink" title="0、Java中的各种O"></a>0、Java中的各种O</h1><h2 id="1、POJO"><a href="#1、POJO" class="headerlink" title="1、POJO"></a>1、POJO</h2><blockquote><p>Plain Ordinary Java Object 简单Java对象。</p></blockquote><p>简单的Java对象，实际上就是一个普通的JavaBeans。使用POJO是为了避免和EJB混淆起来，而且简称比较直接。其中有一些属性及其getter/setter方法的类，没有业务逻辑。有时候可以作为VO或者DTO来使用。</p><h2 id="2、PO"><a href="#2、PO" class="headerlink" title="2、PO"></a>2、PO</h2><blockquote><p>Presistant Object 持久化对象</p></blockquote><p>它们是一组属性和属性的setter/getter方法组成。基于O/R映射出现的概念。属性通常对应数据库/数据模型，并且本身也就可以有一些业务逻辑的处理，可以看做是<strong>数据库表映射的对象</strong>。</p><h2 id="3、BO"><a href="#3、BO" class="headerlink" title="3、BO"></a>3、BO</h2><blockquote><p>Business Object 业务对象</p></blockquote><p>业务对象就是将业务抽象逻辑封装成的对象。这个对象可以包含很多种其他对象，比如DAO作为数据库访问，或者DTO作为业务数据的传递，也可以持有很多的POJO对象。</p><h2 id="4、DO"><a href="#4、DO" class="headerlink" title="4、DO"></a>4、DO</h2><blockquote><p>Domain Object 领域对象</p></blockquote><p>就是从显示世界中抽象出来的有形或者无形的业务实体</p><h2 id="5、DAO"><a href="#5、DAO" class="headerlink" title="5、DAO"></a>5、DAO</h2><blockquote><p>Data Access Obejct 数据访问对象</p></blockquote><p>一般指数据库的访问对象。相当于一个数据的访问接口。加在业务层和数据层中间。通过调用DAO的方法，业务层可以获取一个或者多个PO数据。</p><h2 id="6、-DTO"><a href="#6、-DTO" class="headerlink" title="6、 DTO"></a>6、 DTO</h2><blockquote><p>Data Transfer Object 数据传输对象</p></blockquote><p>一般只用于客户端和服务端，展示层和服务层，应用间为传递数据而封装的对象。内部可以包含很多VO和POJO</p><h2 id="7、-VO"><a href="#7、-VO" class="headerlink" title="7、 VO"></a>7、 VO</h2><blockquote><p>Value Object 值对象</p></blockquote><p>通常用于业务层之间的数据传递和PO一样也仅仅包含数据而已。但应对抽象的业务对象，可以和表对应，也可以不，这个需要根据业务需求，用new 关键字创建，由GC回收。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础知识 </category>
           
       </categories>
       
