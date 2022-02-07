@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/02/01/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/Spring%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/"/>
+      <url>/2022/02/01/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/Spring%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Spring知识点"><a href="#Spring知识点" class="headerlink" title="Spring知识点"></a>Spring知识点</h1><h2 id="Spring-底层核心原理解析"><a href="#Spring-底层核心原理解析" class="headerlink" title="Spring 底层核心原理解析"></a>Spring 底层核心原理解析</h2><h3 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApplicationContext</span> <span class="keyword">extends</span> <span class="title">EnvironmentCapable</span>, <span class="title">ListableBeanFactory</span>, <span class="title">HierarchicalBeanFactory</span>,</span></span><br><span class="line"><span class="class"><span class="title">MessageSource</span>, <span class="title">ApplicationEventPublisher</span>, <span class="title">ResourcePatternResolver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return the unique id of this application context.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the unique id of the context, or &#123;<span class="doctag">@code</span> null&#125; if none</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"><span class="function">String <span class="title">getId</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return a name for the deployed application that this context belongs to.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> a name for the deployed application, or the empty String by default</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">String <span class="title">getApplicationName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return a friendly name for this context.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> a display name for this context (never &#123;<span class="doctag">@code</span> null&#125;)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">String <span class="title">getDisplayName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return the timestamp when this context was first loaded.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the timestamp (ms) when this context was first loaded</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getStartupDate</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return the parent context, or &#123;<span class="doctag">@code</span> null&#125; if there is no parent</span></span><br><span class="line"><span class="comment"> * and this is the root of the context hierarchy.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the parent context, or &#123;<span class="doctag">@code</span> null&#125; if there is no parent</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"><span class="function">ApplicationContext <span class="title">getParent</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Expose AutowireCapableBeanFactory functionality for this context.</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;This is not typically used by application code, except for the purpose of</span></span><br><span class="line"><span class="comment"> * initializing bean instances that live outside of the application context,</span></span><br><span class="line"><span class="comment"> * applying the Spring bean lifecycle (fully or partly) to them.</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;Alternatively, the internal BeanFactory exposed by the</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@link</span> ConfigurableApplicationContext&#125; interface offers access to the</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@link</span> AutowireCapableBeanFactory&#125; interface too. The present method mainly</span></span><br><span class="line"><span class="comment"> * serves as a convenient, specific facility on the ApplicationContext interface.</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;&lt;b&gt;<span class="doctag">NOTE:</span> As of 4.2, this method will consistently throw IllegalStateException</span></span><br><span class="line"><span class="comment"> * after the application context has been closed.&lt;/b&gt; In current Spring Framework</span></span><br><span class="line"><span class="comment"> * versions, only refreshable application contexts behave that way; as of 4.2,</span></span><br><span class="line"><span class="comment"> * all application context implementations will be required to comply.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the AutowireCapableBeanFactory for this context</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IllegalStateException if the context does not support the</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@link</span> AutowireCapableBeanFactory&#125; interface, or does not hold an</span></span><br><span class="line"><span class="comment"> * autowire-capable bean factory yet (e.g. if &#123;<span class="doctag">@code</span> refresh()&#125; has</span></span><br><span class="line"><span class="comment"> * never been called), or if the context has been closed already</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> ConfigurableApplicationContext#refresh()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> ConfigurableApplicationContext#getBeanFactory()</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">AutowireCapableBeanFactory <span class="title">getAutowireCapableBeanFactory</span><span class="params">()</span> <span class="keyword">throws</span> IllegalStateException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>ApplicationContext我们通常称之为Spring的上下文，基本上Spring的核心操作都能通过这个上线文获取。</p></blockquote><h2 id="Spring的bean"><a href="#Spring的bean" class="headerlink" title="Spring的bean"></a>Spring的bean</h2><p>前提条件</p><p>Bean的创建的生命周期</p><p>xxxService –&gt;容器初始化(产生一个对象)–&gt;依赖注入(属性赋值)-&gt;初始化前-&gt;初始化–&gt;初始化后-&gt;Spring的bean</p><p>Spring上线文的初始化</p><ul><li>扫描bean</li><li>创建非懒加载的单例bean</li></ul><h3 id="BeanDefinition"><a href="#BeanDefinition" class="headerlink" title="BeanDefinition"></a>BeanDefinition</h3><ol><li>AbstractBeanDefinition</li><li>AnnotatedBeanDefinition</li><li>GenericBeanDefinition</li><li>AnnotatedGenericBeanDefinition</li><li>ScannerGenericBeanDefinition</li></ol><h3 id="BeanDefinitionReader"><a href="#BeanDefinitionReader" class="headerlink" title="BeanDefinitionReader"></a>BeanDefinitionReader</h3><ol><li>AnnotatedBeanDefinitionReader：读取注解的reader,把一个普通类转换为一个Spring容器的Bean定义(BeanDefinition)</li><li>XmlBeanFefinitionReader：xml定义的读取器，获取</li><li>ClassPathBeanDefinitionScanner：扫描器，通过输入的路径进行扫描</li></ol><h3 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h3><p>DefautListableBeanFactory</p><h3 id="ApplicationContext-1"><a href="#ApplicationContext-1" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h3><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>Property</p><p>ConditionConverter</p><p>SimpleTypeConverter</p><h3 id="比较器"><a href="#比较器" class="headerlink" title="比较器"></a>比较器</h3><p>OrderComparator</p><h3 id="MetadataReader"><a href="#MetadataReader" class="headerlink" title="MetadataReader"></a>MetadataReader</h3><p>读取一个类的元数据，解析类。</p><h3 id="FactoryBean"><a href="#FactoryBean" class="headerlink" title="FactoryBean"></a>FactoryBean</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构和算法</title>
       <link href="/2022/01/27/%E9%9D%A2%E8%AF%95%E5%9F%BA%E5%9C%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
       <url>/2022/01/27/%E9%9D%A2%E8%AF%95%E5%9F%BA%E5%9C%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/</url>
@@ -204,31 +217,6 @@
     
     
     <entry>
-      <title>企业开发规范和技巧</title>
-      <link href="/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
-      <url>/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/</url>
-      
-        <content type="html"><![CDATA[<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​        没有看过<a href="https://developer.aliyun.com/topic/java20?utm_content=g_1000163107">阿里开发规范</a>的同学可以先阅读一遍规范里面的内容，《Java 开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一 线实战的检验及不断完善，公开到业界后，众多社区开发者踊跃参与，共同打磨完善，系统化地整理 成册。为提高软件的最终交付质量，五花八门的错误码人为地 增加排查问题的难度;数据库的表结构和索引设计缺陷带来的系统架构缺陷或性能风险;工程结构混 乱导致后续项目维护艰难;没有鉴权的漏洞代码易被黑客攻击等等，制定一套开发规范出来还是很有必要的，对于增强代码的可读性，提高项目的维护成本，提高问题的排查速度，都会有重要的作用。</p><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Docker操作笔记-从小白到入门</title>
       <link href="/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/Docker%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0-%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%85%A5%E9%97%A8/"/>
       <url>/2022/01/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/Docker%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0-%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%85%A5%E9%97%A8/</url>
@@ -246,6 +234,31 @@
         <tags>
             
             <tag> 软件工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>企业开发规范和技巧</title>
+      <link href="/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
+      <url>/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​        没有看过<a href="https://developer.aliyun.com/topic/java20?utm_content=g_1000163107">阿里开发规范</a>的同学可以先阅读一遍规范里面的内容，《Java 开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一 线实战的检验及不断完善，公开到业界后，众多社区开发者踊跃参与，共同打磨完善，系统化地整理 成册。为提高软件的最终交付质量，五花八门的错误码人为地 增加排查问题的难度;数据库的表结构和索引设计缺陷带来的系统架构缺陷或性能风险;工程结构混 乱导致后续项目维护艰难;没有鉴权的漏洞代码易被黑客攻击等等，制定一套开发规范出来还是很有必要的，对于增强代码的可读性，提高项目的维护成本，提高问题的排查速度，都会有重要的作用。</p><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
             
         </tags>
       
