@@ -5,19 +5,6 @@
     
     <entry>
       <title></title>
-      <link href="/2022/02/16/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/"/>
-      <url>/2022/02/16/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/</url>
-      
-        <content type="html"><![CDATA[<h1 id="2022-知识点梳理"><a href="#2022-知识点梳理" class="headerlink" title="2022-知识点梳理"></a>2022-知识点梳理</h1><h2 id="1、redis-keys执行了会怎么样"><a href="#1、redis-keys执行了会怎么样" class="headerlink" title="1、redis keys执行了会怎么样"></a>1、redis keys执行了会怎么样</h2><blockquote><p>1、当redis集群中的key数量不多时候没有什么大问题，但是随着key数量的增长，这样可能引起redis的客户端访问redis阻塞。</p><p>2、因为Redis是单线程的，执行任何命令时候其他命令会阻塞，而且由于key命令的时间复杂度是O(n)，redis服务端会匹配查找完所有的key才结束，比较耗时，如果在线上执行非常危险。</p><p>3、如果命令执行时间过长可能会触发服务器的安全策略，导致主从切换或者重新选主</p></blockquote><p><strong>可用scan命令替换keys命令，达到同样效果</strong></p><p>Scan命令在Redis的2.8版本爱是支持，相当于db中的分页查询,虽然也是O(n)的时间复杂度，但是数量进行制定，查询时间稳定</p><blockquote><p>Scan  0 match  test* count 100</p></blockquote><h2 id="2、redis缓存击穿-穿透"><a href="#2、redis缓存击穿-穿透" class="headerlink" title="2、redis缓存击穿 穿透"></a>2、redis缓存击穿 穿透</h2><p>前提条件：我们把db的热点数据放在了redis，并设置了超时时间，目前是较少DB的访问次数或者DB支持不了这么大压力。但是在查询时候有又进行了DB兜底的情况。</p><p><strong>缓存击穿</strong>：当缓存过期的一瞬间，大量请求达到redis，因为redis没有，所以一瞬间的所有流量都打到了DB</p><p><strong>缓存穿透</strong>:在缓存中查询不到数据，去数据库中查询数据也没查到，相当于无效请求到了BD，有大量这样请求都打到了DB。</p><p>缓存击穿的解决方案()：</p><ul><li>访问DB的位置加互斥锁</li><li>热点数据续时</li><li>异步同步，不用db兜底</li></ul><p>缓存击穿(前置拦截)：</p><ul><li>接口验证。非法请求降级等等。</li><li>缓存空值并进行超时时间控制</li><li>布隆过滤器–不存在请求先过滤</li></ul><h2 id="3、-zookeeper-eureka区别"><a href="#3、-zookeeper-eureka区别" class="headerlink" title="3、 zookeeper eureka区别"></a>3、 zookeeper eureka区别</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol><li>都可以作为注册中心</li></ol><h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ol><li>Eureka 是AP模型(关注可用性)，ZK是CP模型(关注数据一致性)</li><li>Eureka支持负载均衡策略，ZK不支持</li><li>Eureka访问支持http协议，ZK不支持</li></ol><h2 id="4、dubbo-ribon负载均衡"><a href="#4、dubbo-ribon负载均衡" class="headerlink" title="4、dubbo ribon负载均衡"></a>4、dubbo ribon负载均衡</h2><h2 id="5、-spring中的设计模式和用法示例"><a href="#5、-spring中的设计模式和用法示例" class="headerlink" title="5、 spring中的设计模式和用法示例"></a>5、 spring中的设计模式和用法示例</h2><h2 id="6、-数据库查询最近100万的数据"><a href="#6、-数据库查询最近100万的数据" class="headerlink" title="6、 数据库查询最近100万的数据"></a>6、 数据库查询最近100万的数据</h2><h2 id="7、mysql-acid怎么保证"><a href="#7、mysql-acid怎么保证" class="headerlink" title="7、mysql acid怎么保证"></a>7、mysql acid怎么保证</h2><h2 id="8、mysql-b-树和b树-avl树区别"><a href="#8、mysql-b-树和b树-avl树区别" class="headerlink" title="8、mysql b+树和b树 avl树区别"></a>8、mysql b+树和b树 avl树区别</h2><h2 id="9、分布式锁redis宕机怎么办"><a href="#9、分布式锁redis宕机怎么办" class="headerlink" title="9、分布式锁redis宕机怎么办"></a>9、分布式锁redis宕机怎么办</h2><h2 id="10、dubbo-zookeeper集群宕机还能发现吗"><a href="#10、dubbo-zookeeper集群宕机还能发现吗" class="headerlink" title="10、dubbo zookeeper集群宕机还能发现吗"></a>10、dubbo zookeeper集群宕机还能发现吗</h2><h2 id="11、springboot-properties-yaml读取顺序"><a href="#11、springboot-properties-yaml读取顺序" class="headerlink" title="11、springboot properties yaml读取顺序"></a>11、springboot properties yaml读取顺序</h2><h2 id="12、dubbo-properties-xml读取顺序"><a href="#12、dubbo-properties-xml读取顺序" class="headerlink" title="12、dubbo properties xml读取顺序"></a>12、dubbo properties xml读取顺序</h2>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/2022/02/13/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/netty%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
       <url>/2022/02/13/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/netty%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       
