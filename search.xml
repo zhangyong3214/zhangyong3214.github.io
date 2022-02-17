@@ -8,7 +8,7 @@
       <link href="/2022/02/16/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/"/>
       <url>/2022/02/16/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/</url>
       
-        <content type="html"><![CDATA[<h1 id="2022-知识点梳理"><a href="#2022-知识点梳理" class="headerlink" title="2022-知识点梳理"></a>2022-知识点梳理</h1><h2 id="1、redis-keys执行了会怎么样"><a href="#1、redis-keys执行了会怎么样" class="headerlink" title="1、redis keys执行了会怎么样"></a>1、redis keys执行了会怎么样</h2><blockquote><p>1、当redis集群中的key数量不多时候没有什么大问题，但是随着key数量的增长，这样可能引起redis的客户端访问redis阻塞。</p><p>2、因为Redis是单线程的，执行任何命令时候其他命令会阻塞，而且由于key命令的时间复杂度是O(n)，redis服务端会匹配查找完所有的key才结束，比较耗时，如果在线上执行非常危险。</p><p>3、如果命令执行时间过长可能会触发服务器的安全策略，导致主从切换或者重新选主</p></blockquote><p><strong>可用scan命令替换keys命令，达到同样效果</strong></p><p>Scan命令在Redis的2.8版本爱是支持，相当于db中的分页查询,虽然也是O(n)的时间复杂度，但是数量进行制定，查询时间稳定</p><blockquote><p>Scan  0 match  test* count 100</p></blockquote><h2 id="2、redis缓存击穿-穿透"><a href="#2、redis缓存击穿-穿透" class="headerlink" title="2、redis缓存击穿 穿透"></a>2、redis缓存击穿 穿透</h2><p>前提条件：我们把db的热点数据放在了redis，并设置了超时时间，目前是较少DB的访问次数或者DB支持不了这么大压力。但是在查询时候有又进行了DB兜底的情况。</p><p><strong>缓存击穿</strong>：当缓存过期的一瞬间，大量请求达到redis，因为redis没有，所以一瞬间的所有流量都打到了DB</p><p><strong>缓存穿透</strong>:在缓存中查询不到数据，去数据库中查询数据也没查到，相当于无效请求到了BD，有大量这样请求都打到了DB。</p><p>缓存击穿的解决方案()：</p><ul><li>访问DB的位置加互斥锁</li><li>热点数据续时</li><li>异步同步，不用db兜底</li></ul><p>缓存击穿(前置拦截)：</p><ul><li>接口验证。非法请求降级等等。</li><li>缓存空值并进行超时时间控制</li><li>布隆过滤器–不存在请求先过滤</li></ul><h2 id="3、-zookeeper-eureka区别"><a href="#3、-zookeeper-eureka区别" class="headerlink" title="3、 zookeeper eureka区别"></a>3、 zookeeper eureka区别</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol><li>都可以作为注册中心</li></ol><h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ol><li>Eureka 是AP模型(关注可用性)，ZK是CP模型(关注数据一致性)</li><li>Eureka支持负载均衡策略，ZK不支持</li><li>Eureka访问支持http协议，ZK不支持</li></ol><h2 id="4、dubbo-ribon负载均衡"><a href="#4、dubbo-ribon负载均衡" class="headerlink" title="4、dubbo ribon负载均衡"></a>4、dubbo ribon负载均衡</h2><h2 id="5、-spring中的设计模式和用法示例"><a href="#5、-spring中的设计模式和用法示例" class="headerlink" title="5、 spring中的设计模式和用法示例"></a>5、 spring中的设计模式和用法示例</h2><h2 id="6、-数据库查询最近100万的数据"><a href="#6、-数据库查询最近100万的数据" class="headerlink" title="6、 数据库查询最近100万的数据"></a>6、 数据库查询最近100万的数据</h2><h2 id="7、mysql-acid怎么保证"><a href="#7、mysql-acid怎么保证" class="headerlink" title="7、mysql acid怎么保证"></a>7、mysql acid怎么保证</h2><h2 id="8、mysql-b-树和b树-avl树区别"><a href="#8、mysql-b-树和b树-avl树区别" class="headerlink" title="8、mysql b+树和b树 avl树区别"></a>8、mysql b+树和b树 avl树区别</h2><h2 id="9、分布式锁redis宕机怎么办"><a href="#9、分布式锁redis宕机怎么办" class="headerlink" title="9、分布式锁redis宕机怎么办"></a>9、分布式锁redis宕机怎么办</h2><h2 id="10、dubbo-zookeeper集群宕机还能发现吗"><a href="#10、dubbo-zookeeper集群宕机还能发现吗" class="headerlink" title="10、dubbo zookeeper集群宕机还能发现吗"></a>10、dubbo zookeeper集群宕机还能发现吗</h2><h2 id="11、springboot-properties-yaml读取顺序"><a href="#11、springboot-properties-yaml读取顺序" class="headerlink" title="11、springboot properties yaml读取顺序"></a>11、springboot properties yaml读取顺序</h2><h2 id="12、dubbo-properties-xml读取顺序"><a href="#12、dubbo-properties-xml读取顺序" class="headerlink" title="12、dubbo properties xml读取顺序"></a>12、dubbo properties xml读取顺序</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="2022-知识点梳理"><a href="#2022-知识点梳理" class="headerlink" title="2022-知识点梳理"></a>2022-知识点梳理</h1><h2 id="1、redis-keys执行了会怎么样"><a href="#1、redis-keys执行了会怎么样" class="headerlink" title="1、redis keys执行了会怎么样"></a>1、redis keys执行了会怎么样</h2><blockquote><p>1、当redis集群中的key数量不多时候没有什么大问题，但是随着key数量的增长，这样可能引起redis的客户端访问redis阻塞。</p><p>2、因为Redis是单线程的，执行任何命令时候其他命令会阻塞，而且由于key命令的时间复杂度是O(n)，redis服务端会匹配查找完所有的key才结束，比较耗时，如果在线上执行非常危险。</p><p>3、如果命令执行时间过长可能会触发服务器的安全策略，导致主从切换或者重新选主</p></blockquote><p><strong>可用scan命令替换keys命令，达到同样效果</strong></p><p>Scan命令在Redis的2.8版本爱是支持，相当于db中的分页查询,虽然也是O(n)的时间复杂度，但是数量进行制定，查询时间稳定</p><blockquote><p>Scan  0 match  test* count 100</p></blockquote><h2 id="2、redis缓存击穿-穿透"><a href="#2、redis缓存击穿-穿透" class="headerlink" title="2、redis缓存击穿 穿透"></a>2、redis缓存击穿 穿透</h2><p>前提条件：我们把db的热点数据放在了redis，并设置了超时时间，目前是较少DB的访问次数或者DB支持不了这么大压力。但是在查询时候有又进行了DB兜底的情况。</p><p><strong>缓存击穿</strong>：当缓存过期的一瞬间，大量请求达到redis，因为redis没有，所以一瞬间的所有流量都打到了DB</p><p><strong>缓存穿透</strong>:在缓存中查询不到数据，去数据库中查询数据也没查到，相当于无效请求到了BD，有大量这样请求都打到了DB。</p><p>缓存击穿的解决方案()：</p><ul><li>访问DB的位置加互斥锁</li><li>热点数据续时</li><li>异步同步，不用db兜底</li></ul><p>缓存击穿(前置拦截)：</p><ul><li>接口验证。非法请求降级等等。</li><li>缓存空值并进行超时时间控制</li><li>布隆过滤器–不存在请求先过滤</li></ul><h2 id="3、-zookeeper-eureka区别"><a href="#3、-zookeeper-eureka区别" class="headerlink" title="3、 zookeeper eureka区别"></a>3、 zookeeper eureka区别</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol><li>都可以作为注册中心</li></ol><h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ol><li>Eureka 是AP模型(关注可用性)，ZK是CP模型(关注数据一致性)</li><li>Eureka支持负载均衡策略，ZK不支持</li><li>Eureka访问支持http协议，ZK不支持</li></ol><h2 id="4、dubbo-robin负载均衡"><a href="#4、dubbo-robin负载均衡" class="headerlink" title="4、dubbo robin负载均衡"></a>4、dubbo robin负载均衡</h2><h3 id="Dubbo负载均衡算法："><a href="#Dubbo负载均衡算法：" class="headerlink" title="Dubbo负载均衡算法："></a>Dubbo负载均衡算法：</h3><ol><li><p>RandomLoadBalance:权重随机算法，根据权重值进行随机负载</p><blockquote><p>假设有一组服务器A，B，C,对应的权重为[1,2,7]权重总和为10，[0,0]区间属于服务A,[1,2]属于B，[3,9]属于服务C。每次负载时候，通过随机生成一个范围在[0,9]之间的随机数，计算这个随机数在哪个区间，找到属于这个区间的服务就可以。</p></blockquote></li><li><p>LeastActiveLoadBalance：最少活跃数调用法</p><blockquote><p>活跃度调用越小，表明该服务提供者的效率越高，单位时间内可以处理更多的请求。</p><p>每个服务提供者对应一个活跃数的active，初始为0，每收到一个请求，活跃度+1，处理完成一个请求活跃度-1。活跃度可以代表该服务还未处理完成的请求。路由按照活跃度越小，优先级越高。</p></blockquote></li><li><p>ConsistentHashLoadBalance：hash一致性算法</p><blockquote><p> hash一致性算法，相同参数的请求总时发送到同一提供者。当某一台挂掉时，请求分摊到其他提供者。</p></blockquote></li><li><p>RoundRobiLoadBalance:加权轮训算法</p><blockquote><p>轮训是将每个请求轮流分配到每台服务器。假如说有三台服务器A,B,C。轮训 是一种状态负载均衡算法，实现简单，适用于每台服务器性能接近的场景。但是实际情况，每台服务器性能可能不一致，如果我们把流量均分，那么性能较差的机器会最先成为瓶颈。一次可以对轮训进行加权，实现调控每台机器的负载。经过加权后，每台服务器会进行请求的比例分配。比如A、B、C的权重为1:2:7,那么10次请求中1笔到A,2笔到B,7笔到C。</p></blockquote></li></ol><h2 id="5、-spring中的设计模式和用法示例"><a href="#5、-spring中的设计模式和用法示例" class="headerlink" title="5、 spring中的设计模式和用法示例"></a>5、 spring中的设计模式和用法示例</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>BeanFactory是Spring中的容器工厂，我们可以通过这个方法获取不同的对象。<br>通过抽象类元素，形成beanDefinition—&gt;通过BeanDefinition</p><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>获取bean时候通过三级缓存实现。</p><h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><p>各种Wrapper</p><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><p>AOP底层就是动态代理</p><blockquote><p>具体可以讲讲Spring的bean实例化后的动态代理过程。PostProcessor</p></blockquote><h3 id="模板设计模式"><a href="#模板设计模式" class="headerlink" title="模板设计模式"></a>模板设计模式</h3><blockquote><p>具体可以参照不同的容器启动过程</p></blockquote><h3 id="策略设计模式"><a href="#策略设计模式" class="headerlink" title="策略设计模式"></a>策略设计模式</h3><h2 id="6、-数据库查询最近100万的数据"><a href="#6、-数据库查询最近100万的数据" class="headerlink" title="6、 数据库查询最近100万的数据"></a>6、 数据库查询最近100万的数据</h2><h2 id="7、mysql-acid怎么保证"><a href="#7、mysql-acid怎么保证" class="headerlink" title="7、mysql acid怎么保证"></a>7、mysql acid怎么保证</h2><ul><li>a(Atomicity):原子性,每一个事务是一个最小单位，事务内部的操作要么都成功，要么都失败。</li><li>c(Consistency):一致性，一致性是指事务执行前后，数据数据存于一中合法状态，这种状态是指语义上而不是语法上。合法状态是指满足预定的约束就叫做合法的状态。</li><li>i(Isolation):隔离性，隔离性是指多个事务并发执行，内部的操作和其他事务是隔离的，并发执行的各个事务之间不能互相干扰。</li><li>d(Durability):持久性，持久性是指事务一旦提交，他怼数据库的改变是永久性的。接下来的其他操作或者故障都不应该对这个结果有任何影响。</li></ul><blockquote><ol><li><p>原子性通过InnoDB的undo log实现。unlog也叫做回归日志，是实现原子性的关键，当事务回滚时能够撤销已经成功执行的sql语句，undo log的实现原理是记录一条相反操作的操作。insert–&gt; delete。update(后) –&gt; update(前) ，delete –&gt; insert</p></li><li><p>一致性是数据库需要达到的目的。从数据库层面，通过原子性、隔离性、持久性来保证。从应用层面，通过代码判断数据库是否有效，然后决定回滚还是提交数据，也是一致性的</p></li><li><p>持久性是通过InnoDB 的redo log实现的。redo log也倨傲重做日志。当做数据修改时候，不仅需要在内存中操作，还会在redo log中记录这次操作。当事务提交时候，会将redo log 进行刷盘.当数据库宕机重启时候，会将redo log中内存恢复到数据库中，再根据undo log和binlog内容决定回归数据还是提交数据。</p></li><li><p>隔离性通过InnoDB的隔离界别和MVCC来实现。</p></li></ol></blockquote><h2 id="8、mysql-b-树和b树-avl树区别"><a href="#8、mysql-b-树和b树-avl树区别" class="headerlink" title="8、mysql b+树和b树 avl树区别"></a>8、mysql b+树和b树 avl树区别</h2><p>avl:平衡二叉树</p><h2 id="9、分布式锁redis宕机怎么办"><a href="#9、分布式锁redis宕机怎么办" class="headerlink" title="9、分布式锁redis宕机怎么办"></a>9、分布式锁redis宕机怎么办</h2><blockquote><p>首先确定业务场景是否强依赖这个分布式锁，如果是那么你的业务就进行不下去。</p><p>如果不是就要分具体情况。</p></blockquote><h2 id="10、dubbo-zookeeper集群宕机还能发现吗"><a href="#10、dubbo-zookeeper集群宕机还能发现吗" class="headerlink" title="10、dubbo zookeeper集群宕机还能发现吗"></a>10、dubbo zookeeper集群宕机还能发现吗</h2><p>问题不清晰。可以分为两个问题来回答</p><h3 id="dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么"><a href="#dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么" class="headerlink" title="dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么"></a>dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么</h3><blockquote><p>这个问题是是问，dubbo客户端缓存服务端节点的问题</p></blockquote><h3 id="dubbo-的注册中心zk集群宕机后还能重新启动么"><a href="#dubbo-的注册中心zk集群宕机后还能重新启动么" class="headerlink" title="dubbo 的注册中心zk集群宕机后还能重新启动么"></a>dubbo 的注册中心zk集群宕机后还能重新启动么</h3><blockquote><p>问的是zk的故障恢复，可以聊聊zk的zab协议。</p></blockquote><h2 id="11、springboot-properties-yaml读取顺序"><a href="#11、springboot-properties-yaml读取顺序" class="headerlink" title="11、springboot properties yaml读取顺序"></a>11、springboot properties yaml读取顺序</h2><h2 id="12、dubbo-properties-xml读取顺序"><a href="#12、dubbo-properties-xml读取顺序" class="headerlink" title="12、dubbo properties xml读取顺序"></a>12、dubbo properties xml读取顺序</h2><h2 id="13、Java类加载的过程"><a href="#13、Java类加载的过程" class="headerlink" title="13、Java类加载的过程"></a>13、Java类加载的过程</h2><ol><li>加载：把.class类加载到JVM虚拟中，并生成访问入口<ul><li>通过类的全限定名获取该类的二进制流</li><li>将改二进制流中的静态存储结构转换为方法区运行时数据结构</li><li>在内存中生成该类的Class对象，作为该类的数据访问入口</li></ul></li><li>验证：目的是确保加载进.class类是合法的，并且是不危害到JVM虚拟机的。验证有四种分别如下<ul><li>文件格式验证。是否符合Class文件的规范。CAFEBABE</li><li>元数据验证：对字节码描述信息进行语义分析，这个类是否有父类，是否继承了不能被继承的类等等</li><li>字节码验证：通过数据流和控制流分析，确定程序语义是否正确，主要针对方法体验证。如：方法中的类型转换是否正确，跳转执行是否正确。</li><li>符号引用验证：这个动作在后面的解析过程中发生，主要是为了确保解析动作能正确执行。</li></ul></li><li>准备：准备阶段是为类的静态变量分配内存并将其初始化为默认值，这些内存都将在方法区中进行分配。准备阶段不分配实例变量的内存，实例变量将会在对象实例化是随着对象一起分配在Java堆中。</li><li>解析：该阶段主要完成符号引用到直接引用的转换动作。解析动作不一定在初始化之前完成，也有可能在初始化之后完成。</li><li>初始化：初始化是类加载的最后一步，前面的类加载过程，除了在加载阶段用户应用程序能够通过自定义类加载器以外，其他动作完全由虚拟机主导和控制。到了初始化阶段，才开始真正执行类中定义的java程序代码。</li><li>使用</li><li>卸载</li></ol><h3 id="14、类加载器"><a href="#14、类加载器" class="headerlink" title="14、类加载器"></a>14、类加载器</h3><ol><li>启动类加载器：BootstrapClassLoader。加载jre/lib/下的类。</li><li>扩展类加载器：ExtensionsClassLoader：用来加载Java的扩展库。加载jre/ext/lib/下的类</li><li>系统类加载器：SystemClassLoader：加载用户的类路径classPath下的class</li><li>用户自定义类加载器：通过加成java.lang.ClassLoader类方式加载</li></ol><h3 id="15、-双亲委派"><a href="#15、-双亲委派" class="headerlink" title="15、 双亲委派"></a>15、 双亲委派</h3><p>当一个类加载器收到类加载请求时候，不会自己先去加载这个类，而是委派父类加载，一只到顶层的BootstrapClassLoader,如果还没有加载到，那么才由子类加载。</p><h3 id="16、数据一致性协议"><a href="#16、数据一致性协议" class="headerlink" title="16、数据一致性协议"></a>16、数据一致性协议</h3><p>分布式系统需要维护多个副本来进行容错，提供系统的可用性。要实现次目标，就必须要解决分布式系统的最核心问题：维护多个副本的一致性。</p><h4 id="zab协议"><a href="#zab协议" class="headerlink" title="zab协议"></a>zab协议</h4><h4 id="Raft协议"><a href="#Raft协议" class="headerlink" title="Raft协议"></a>Raft协议</h4><p>核心流程分为一下几步</p><ol><li><p>选主(Leader Election)</p><blockquote><p>每一个副本都可以分为三种角色。Loader、Follower、Candidate</p></blockquote><p>Candidate代表主节点故障，正在选举过程</p></li><li><p>日志复制(Log Replication)</p></li><li><p>日志压缩(Log compaction)</p></li><li></li></ol>]]></content>
       
       
       <categories>
@@ -230,31 +230,6 @@
     
     
     <entry>
-      <title>企业开发规范和技巧</title>
-      <link href="/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
-      <url>/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/</url>
-      
-        <content type="html"><![CDATA[<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​        没有看过<a href="https://developer.aliyun.com/topic/java20?utm_content=g_1000163107">阿里开发规范</a>的同学可以先阅读一遍规范里面的内容，《Java 开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一 线实战的检验及不断完善，公开到业界后，众多社区开发者踊跃参与，共同打磨完善，系统化地整理 成册。为提高软件的最终交付质量，五花八门的错误码人为地 增加排查问题的难度;数据库的表结构和索引设计缺陷带来的系统架构缺陷或性能风险;工程结构混 乱导致后续项目维护艰难;没有鉴权的漏洞代码易被黑客攻击等等，制定一套开发规范出来还是很有必要的，对于增强代码的可读性，提高项目的维护成本，提高问题的排查速度，都会有重要的作用。</p><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Spring技术笔记</title>
       <link href="/2022/01/27/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Spring/"/>
       <url>/2022/01/27/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Spring/</url>
@@ -272,6 +247,31 @@
         <tags>
             
             <tag> 后端技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>企业开发规范和技巧</title>
+      <link href="/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
+      <url>/2022/01/27/%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%92%8C%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​        没有看过<a href="https://developer.aliyun.com/topic/java20?utm_content=g_1000163107">阿里开发规范</a>的同学可以先阅读一遍规范里面的内容，《Java 开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一 线实战的检验及不断完善，公开到业界后，众多社区开发者踊跃参与，共同打磨完善，系统化地整理 成册。为提高软件的最终交付质量，五花八门的错误码人为地 增加排查问题的难度;数据库的表结构和索引设计缺陷带来的系统架构缺陷或性能风险;工程结构混 乱导致后续项目维护艰难;没有鉴权的漏洞代码易被黑客攻击等等，制定一套开发规范出来还是很有必要的，对于增强代码的可读性，提高项目的维护成本，提高问题的排查速度，都会有重要的作用。</p><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
             
         </tags>
       
