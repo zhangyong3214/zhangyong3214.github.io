@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面试知识点整理 | tankの记忆</title><meta name="keywords" content="后端技术"><meta name="author" content="tank"><meta name="copyright" content="tank"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Java中面试知识点，2022最新，纯个人理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试知识点整理">
+<meta property="og:url" content="https://zhangyong3214.github.io/2022/04/05/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/index.html">
+<meta property="og:site_name" content="tankの记忆">
+<meta property="og:description" content="Java中面试知识点，2022最新，纯个人理解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhangyong3214.github.io/images/basic/standup.jpeg">
+<meta property="article:published_time" content="2022-04-05T09:32:31.589Z">
+<meta property="article:modified_time" content="2022-04-05T09:32:31.590Z">
+<meta property="article:author" content="tank">
+<meta property="article:tag" content="后端技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhangyong3214.github.io/images/basic/standup.jpeg"><link rel="shortcut icon" href="https://gitee.com/lizejiao/img-go/raw/master/images/favicon.jpg"><link rel="canonical" href="https://zhangyong3214.github.io/2022/04/05/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试知识点整理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-05 17:32:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tank_head.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/%E5%85%B3%E4%BA%8E%E6%88%91/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/basic/standup.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">tankの记忆</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/%E5%85%B3%E4%BA%8E%E6%88%91/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试知识点整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-05T09:32:31.589Z" title="发表于 2022-04-05 17:32:31">2022-04-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-05T09:32:31.590Z" title="更新于 2022-04-05 17:32:31">2022-04-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86/">面试知识</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试知识点整理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="2022-知识点梳理"><a href="#2022-知识点梳理" class="headerlink" title="2022-知识点梳理"></a>2022-知识点梳理</h1><h2 id="1、redis-keys执行了会怎么样"><a href="#1、redis-keys执行了会怎么样" class="headerlink" title="1、redis keys执行了会怎么样"></a>1、redis keys执行了会怎么样</h2><blockquote>
+<p>1、当redis集群中的key数量不多时候没有什么大问题，但是随着key数量的增长，这样可能引起redis的客户端访问redis阻塞。</p>
+<p>2、因为Redis是单线程的，执行任何命令时候其他命令会阻塞，而且由于key命令的时间复杂度是O(n)，redis服务端会匹配查找完所有的key才结束，比较耗时，如果在线上执行非常危险。</p>
+<p>3、如果命令执行时间过长可能会触发服务器的安全策略，导致主从切换或者重新选主</p>
+</blockquote>
+<p><strong>可用scan命令替换keys命令，达到同样效果</strong></p>
+<p>Scan命令在Redis的2.8版本爱是支持，相当于db中的分页查询,虽然也是O(n)的时间复杂度，但是数量进行制定，查询时间稳定</p>
+<blockquote>
+<p>Scan  0 match  test* count 100</p>
+</blockquote>
+<h2 id="2、redis缓存击穿-穿透"><a href="#2、redis缓存击穿-穿透" class="headerlink" title="2、redis缓存击穿 穿透"></a>2、redis缓存击穿 穿透</h2><p>前提条件：我们把db的热点数据放在了redis，并设置了超时时间，目前是较少DB的访问次数或者DB支持不了这么大压力。但是在查询时候有又进行了DB兜底的情况。</p>
+<p><strong>缓存击穿</strong>：当缓存过期的一瞬间，大量请求达到redis，因为redis没有，所以一瞬间的所有流量都打到了DB</p>
+<p><strong>缓存穿透</strong>:在缓存中查询不到数据，去数据库中查询数据也没查到，相当于无效请求到了BD，有大量这样请求都打到了DB。</p>
+<p>缓存击穿的解决方案()：</p>
+<ul>
+<li>访问DB的位置加互斥锁</li>
+<li>热点数据续时</li>
+<li>异步同步，不用db兜底</li>
+</ul>
+<p>缓存击穿(前置拦截)：</p>
+<ul>
+<li>接口验证。非法请求降级等等。</li>
+<li>缓存空值并进行超时时间控制</li>
+<li>布隆过滤器–不存在请求先过滤</li>
+</ul>
+<h2 id="3、-zookeeper-eureka区别"><a href="#3、-zookeeper-eureka区别" class="headerlink" title="3、 zookeeper eureka区别"></a>3、 zookeeper eureka区别</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol>
+<li>都可以作为注册中心</li>
+</ol>
+<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ol>
+<li>Eureka 是AP模型(关注可用性)，ZK是CP模型(关注数据一致性)</li>
+<li>Eureka支持负载均衡策略，ZK不支持</li>
+<li>Eureka访问支持http协议，ZK不支持</li>
+</ol>
+<h2 id="4、dubbo-robin负载均衡"><a href="#4、dubbo-robin负载均衡" class="headerlink" title="4、dubbo robin负载均衡"></a>4、dubbo robin负载均衡</h2><h3 id="Dubbo负载均衡算法："><a href="#Dubbo负载均衡算法：" class="headerlink" title="Dubbo负载均衡算法："></a>Dubbo负载均衡算法：</h3><ol>
+<li><p>RandomLoadBalance:权重随机算法，根据权重值进行随机负载</p>
+<blockquote>
+<p>假设有一组服务器A，B，C,对应的权重为[1,2,7]权重总和为10，[0,0]区间属于服务A,[1,2]属于B，[3,9]属于服务C。每次负载时候，通过随机生成一个范围在[0,9]之间的随机数，计算这个随机数在哪个区间，找到属于这个区间的服务就可以。</p>
+</blockquote>
+</li>
+<li><p>LeastActiveLoadBalance：最少活跃数调用法</p>
+<blockquote>
+<p>活跃度调用越小，表明该服务提供者的效率越高，单位时间内可以处理更多的请求。</p>
+<p>每个服务提供者对应一个活跃数的active，初始为0，每收到一个请求，活跃度+1，处理完成一个请求活跃度-1。活跃度可以代表该服务还未处理完成的请求。路由按照活跃度越小，优先级越高。</p>
+</blockquote>
+</li>
+<li><p>ConsistentHashLoadBalance：hash一致性算法</p>
+<blockquote>
+<p> hash一致性算法，相同参数的请求总时发送到同一提供者。当某一台挂掉时，请求分摊到其他提供者。</p>
+</blockquote>
+</li>
+<li><p>RoundRobiLoadBalance:加权轮训算法</p>
+<blockquote>
+<p>轮训是将每个请求轮流分配到每台服务器。假如说有三台服务器A,B,C。轮训 是一种状态负载均衡算法，实现简单，适用于每台服务器性能接近的场景。但是实际情况，每台服务器性能可能不一致，如果我们把流量均分，那么性能较差的机器会最先成为瓶颈。一次可以对轮训进行加权，实现调控每台机器的负载。经过加权后，每台服务器会进行请求的比例分配。比如A、B、C的权重为1:2:7,那么10次请求中1笔到A,2笔到B,7笔到C。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="5、-spring中的设计模式和用法示例"><a href="#5、-spring中的设计模式和用法示例" class="headerlink" title="5、 spring中的设计模式和用法示例"></a>5、 spring中的设计模式和用法示例</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>BeanFactory是Spring中的容器工厂，我们可以通过这个方法获取不同的对象。<br>通过抽象类元素，形成beanDefinition—&gt;通过BeanDefinition</p>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>获取bean时候通过三级缓存实现。</p>
+<h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><p>各种Wrapper</p>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><p>AOP底层就是动态代理</p>
+<blockquote>
+<p>具体可以讲讲Spring的bean实例化后的动态代理过程。PostProcessor</p>
+</blockquote>
+<h3 id="模板设计模式"><a href="#模板设计模式" class="headerlink" title="模板设计模式"></a>模板设计模式</h3><blockquote>
+<p>具体可以参照不同的容器启动过程</p>
+</blockquote>
+<h3 id="策略设计模式"><a href="#策略设计模式" class="headerlink" title="策略设计模式"></a>策略设计模式</h3><h2 id="6、-数据库查询最近100万的数据"><a href="#6、-数据库查询最近100万的数据" class="headerlink" title="6、 数据库查询最近100万的数据"></a>6、 数据库查询最近100万的数据</h2><h2 id="7、mysql-acid怎么保证"><a href="#7、mysql-acid怎么保证" class="headerlink" title="7、mysql acid怎么保证"></a>7、mysql acid怎么保证</h2><ul>
+<li>a(Atomicity):原子性,每一个事务是一个最小单位，事务内部的操作要么都成功，要么都失败。</li>
+<li>c(Consistency):一致性，一致性是指事务执行前后，数据数据存于一中合法状态，这种状态是指语义上而不是语法上。合法状态是指满足预定的约束就叫做合法的状态。</li>
+<li>i(Isolation):隔离性，隔离性是指多个事务并发执行，内部的操作和其他事务是隔离的，并发执行的各个事务之间不能互相干扰。</li>
+<li>d(Durability):持久性，持久性是指事务一旦提交，他怼数据库的改变是永久性的。接下来的其他操作或者故障都不应该对这个结果有任何影响。</li>
+</ul>
+<blockquote>
+<ol>
+<li><p>原子性通过InnoDB的undo log实现。unlog也叫做回归日志，是实现原子性的关键，当事务回滚时能够撤销已经成功执行的sql语句，undo log的实现原理是记录一条相反操作的操作。insert–&gt; delete。update(后) –&gt; update(前) ，delete –&gt; insert</p>
+</li>
+<li><p>一致性是数据库需要达到的目的。从数据库层面，通过原子性、隔离性、持久性来保证。从应用层面，通过代码判断数据库是否有效，然后决定回滚还是提交数据，也是一致性的</p>
+</li>
+<li><p>持久性是通过InnoDB 的redo log实现的。redo log也倨傲重做日志。当做数据修改时候，不仅需要在内存中操作，还会在redo log中记录这次操作。当事务提交时候，会将redo log 进行刷盘.当数据库宕机重启时候，会将redo log中内存恢复到数据库中，再根据undo log和binlog内容决定回归数据还是提交数据。</p>
+</li>
+<li><p>隔离性通过InnoDB的隔离界别和MVCC来实现。</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="8、mysql-b-树和b树-avl树区别"><a href="#8、mysql-b-树和b树-avl树区别" class="headerlink" title="8、mysql b+树和b树 avl树区别"></a>8、mysql b+树和b树 avl树区别</h2><p>avl:平衡二叉树</p>
+<h2 id="9、分布式锁redis宕机怎么办"><a href="#9、分布式锁redis宕机怎么办" class="headerlink" title="9、分布式锁redis宕机怎么办"></a>9、分布式锁redis宕机怎么办</h2><blockquote>
+<p>首先确定业务场景是否强依赖这个分布式锁，如果是那么你的业务就进行不下去。</p>
+<p>如果不是就要分具体情况。</p>
+</blockquote>
+<h2 id="10、dubbo-zookeeper集群宕机还能发现吗"><a href="#10、dubbo-zookeeper集群宕机还能发现吗" class="headerlink" title="10、dubbo zookeeper集群宕机还能发现吗"></a>10、dubbo zookeeper集群宕机还能发现吗</h2><p>问题不清晰。可以分为两个问题来回答</p>
+<h3 id="dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么"><a href="#dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么" class="headerlink" title="dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么"></a>dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么</h3><blockquote>
+<p>这个问题是是问，dubbo客户端缓存服务端节点的问题</p>
+</blockquote>
+<h3 id="dubbo-的注册中心zk集群宕机后还能重新启动么"><a href="#dubbo-的注册中心zk集群宕机后还能重新启动么" class="headerlink" title="dubbo 的注册中心zk集群宕机后还能重新启动么"></a>dubbo 的注册中心zk集群宕机后还能重新启动么</h3><blockquote>
+<p>问的是zk的故障恢复，可以聊聊zk的zab协议。</p>
+</blockquote>
+<h2 id="11、springboot-properties-yaml读取顺序"><a href="#11、springboot-properties-yaml读取顺序" class="headerlink" title="11、springboot properties yaml读取顺序"></a>11、springboot properties yaml读取顺序</h2><h2 id="12、dubbo-properties-xml读取顺序"><a href="#12、dubbo-properties-xml读取顺序" class="headerlink" title="12、dubbo properties xml读取顺序"></a>12、dubbo properties xml读取顺序</h2><h2 id="13、Java类加载的过程"><a href="#13、Java类加载的过程" class="headerlink" title="13、Java类加载的过程"></a>13、Java类加载的过程</h2><ol>
+<li>加载：把.class类加载到JVM虚拟中，并生成访问入口<ul>
+<li>通过类的全限定名获取该类的二进制流</li>
+<li>将改二进制流中的静态存储结构转换为方法区运行时数据结构</li>
+<li>在内存中生成该类的Class对象，作为该类的数据访问入口</li>
+</ul>
+</li>
+<li>验证：目的是确保加载进.class类是合法的，并且是不危害到JVM虚拟机的。验证有四种分别如下<ul>
+<li>文件格式验证。是否符合Class文件的规范。CAFEBABE</li>
+<li>元数据验证：对字节码描述信息进行语义分析，这个类是否有父类，是否继承了不能被继承的类等等</li>
+<li>字节码验证：通过数据流和控制流分析，确定程序语义是否正确，主要针对方法体验证。如：方法中的类型转换是否正确，跳转执行是否正确。</li>
+<li>符号引用验证：这个动作在后面的解析过程中发生，主要是为了确保解析动作能正确执行。</li>
+</ul>
+</li>
+<li>准备：准备阶段是为类的静态变量分配内存并将其初始化为默认值，这些内存都将在方法区中进行分配。准备阶段不分配实例变量的内存，实例变量将会在对象实例化是随着对象一起分配在Java堆中。</li>
+<li>解析：该阶段主要完成符号引用到直接引用的转换动作。解析动作不一定在初始化之前完成，也有可能在初始化之后完成。</li>
+<li>初始化：初始化是类加载的最后一步，前面的类加载过程，除了在加载阶段用户应用程序能够通过自定义类加载器以外，其他动作完全由虚拟机主导和控制。到了初始化阶段，才开始真正执行类中定义的java程序代码。</li>
+<li>使用</li>
+<li>卸载</li>
+</ol>
+<h3 id="14、类加载器"><a href="#14、类加载器" class="headerlink" title="14、类加载器"></a>14、类加载器</h3><ol>
+<li>启动类加载器：BootstrapClassLoader。加载jre/lib/下的类。</li>
+<li>扩展类加载器：ExtensionsClassLoader：用来加载Java的扩展库。加载jre/ext/lib/下的类</li>
+<li>系统类加载器：SystemClassLoader：加载用户的类路径classPath下的class</li>
+<li>用户自定义类加载器：通过加成java.lang.ClassLoader类方式加载</li>
+</ol>
+<h3 id="15、-双亲委派"><a href="#15、-双亲委派" class="headerlink" title="15、 双亲委派"></a>15、 双亲委派</h3><p>当一个类加载器收到类加载请求时候，不会自己先去加载这个类，而是委派父类加载，一只到顶层的BootstrapClassLoader,如果还没有加载到，那么才由子类加载。</p>
+<h3 id="16、数据一致性协议"><a href="#16、数据一致性协议" class="headerlink" title="16、数据一致性协议"></a>16、数据一致性协议</h3><p>分布式系统需要维护多个副本来进行容错，提供系统的可用性。要实现次目标，就必须要解决分布式系统的最核心问题：维护多个副本的一致性。</p>
+<h4 id="zab协议"><a href="#zab协议" class="headerlink" title="zab协议"></a>zab协议</h4><h4 id="Raft协议"><a href="#Raft协议" class="headerlink" title="Raft协议"></a>Raft协议</h4><p>核心流程分为一下几步</p>
+<ol>
+<li><p>选主(Leader Election)</p>
+<blockquote>
+<p>每一个副本都可以分为三种角色。Loader、Follower、Candidate</p>
+</blockquote>
+<p>Candidate代表主节点故障，正在选举过程。</p>
+</li>
+<li><p>日志复制(Log Replication)</p>
+</li>
+<li><p>日志压缩(Log compaction)</p>
+</li>
+</ol>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>整理：HashMap是一个用于存储key-value键值对的集合，每个键值对我们通常称为为一个entry。这些键值对分散存储在一个数组中，这个数组就是HashMap的主干。</p>
+<p>JDK1.8下的数据结构</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 省略其他代码</span></span><br><span class="line">      <span class="comment">/* ---------------- Fields -------------- */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">transient</span> Node&lt;K,V&gt;[] table;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">transient</span> Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet;</span><br><span class="line">    <span class="keyword">transient</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">transient</span> <span class="keyword">int</span> modCount;</span><br><span class="line">  	<span class="keyword">int</span> threshold;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">float</span> loadFactor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>.<span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> hash;</span><br><span class="line">        <span class="keyword">final</span> K key;</span><br><span class="line">        V value;</span><br><span class="line">        Node&lt;K,V&gt; next;</span><br><span class="line"></span><br><span class="line">        Node(<span class="keyword">int</span> hash, K key, V value, Node&lt;K,V&gt; next) &#123;</span><br><span class="line">            <span class="keyword">this</span>.hash = hash;</span><br><span class="line">            <span class="keyword">this</span>.key = key;</span><br><span class="line">            <span class="keyword">this</span>.value = value;</span><br><span class="line">            <span class="keyword">this</span>.next = next;</span><br><span class="line">        &#125;</span><br><span class="line">  <span class="comment">// 其他代码....</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>HashMap提供了两个核心的方法，put(key,value); get(key);</p>
+</blockquote>
+<h3 id="put-key-value"><a href="#put-key-value" class="headerlink" title="put(key,value)"></a>put(key,value)</h3><ol>
+<li>通过hash(key)获取数组的位置。</li>
+<li>如果位置为空，把key,value包装成Entry放入相应的位置</li>
+<li>如果位置不为空，首先判断数据结构是树，那么把节点放入树种</li>
+<li>看下目前的链表数目是否已经再放一个节点会进行树化，如果是就树化</li>
+<li>否则直接放在这个链表上</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> putVal(hash(key), key, value, <span class="keyword">false</span>, <span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">final</span> V <span class="title">putVal</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">boolean</span> onlyIfAbsent,</span></span></span><br><span class="line"><span class="params"><span class="function">                   <span class="keyword">boolean</span> evict)</span> </span>&#123;</span><br><span class="line">        Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="keyword">int</span> n, i;</span><br><span class="line">        <span class="keyword">if</span> ((tab = table) == <span class="keyword">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">            n = (tab = resize()).length;</span><br><span class="line">        <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="keyword">null</span>)</span><br><span class="line">            tab[i] = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Node&lt;K,V&gt; e; K k;</span><br><span class="line">            <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">                ((k = p.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                e = p;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="keyword">this</span>, tab, hash, key, value);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> binCount = <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                    <span class="keyword">if</span> ((e = p.next) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                        p.next = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">                        <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                            treeifyBin(tab, hash);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                        ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    p = e;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">                V oldValue = e.value;</span><br><span class="line">                <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="keyword">null</span>)</span><br><span class="line">                    e.value = value;</span><br><span class="line">                afterNodeAccess(e);</span><br><span class="line">                <span class="keyword">return</span> oldValue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ++modCount;</span><br><span class="line">        <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">            resize();</span><br><span class="line">        afterNodeInsertion(evict);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>1、对key进行hash.</p>
+<p>2、</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">      Node&lt;K,V&gt; e;</span><br><span class="line">      <span class="keyword">return</span> (e = getNode(hash(key), key)) == <span class="keyword">null</span> ? <span class="keyword">null</span> : e.value;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">final</span> Node&lt;K,V&gt; <span class="title">getNode</span><span class="params">(<span class="keyword">int</span> hash, Object key)</span> </span>&#123;</span><br><span class="line">      Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span class="keyword">int</span> n; K k;</span><br><span class="line">      <span class="keyword">if</span> ((tab = table) != <span class="keyword">null</span> &amp;&amp; (n = tab.length) &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">          (first = tab[(n - <span class="number">1</span>) &amp; hash]) != <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span> (first.hash == hash &amp;&amp; <span class="comment">// always check first node</span></span><br><span class="line">              ((k = first.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">              <span class="keyword">return</span> first;</span><br><span class="line">          <span class="keyword">if</span> ((e = first.next) != <span class="keyword">null</span>) &#123;</span><br><span class="line">              <span class="keyword">if</span> (first <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                  <span class="keyword">return</span> ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">              <span class="keyword">do</span> &#123;</span><br><span class="line">                  <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                      ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                      <span class="keyword">return</span> e;</span><br><span class="line">              &#125; <span class="keyword">while</span> ((e = e.next) != <span class="keyword">null</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="17、线程的几种状态及其转换"><a href="#17、线程的几种状态及其转换" class="headerlink" title="17、线程的几种状态及其转换"></a>17、线程的几种状态及其转换</h2><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ol>
+<li>新建(new)</li>
+<li>就绪(Runnable)</li>
+<li>运行(Running)</li>
+<li>阻塞(Blocked)</li>
+<li>运行结束(Dead)<h3 id="JAVA-线程状态"><a href="#JAVA-线程状态" class="headerlink" title="JAVA 线程状态"></a>JAVA 线程状态</h3></li>
+<li>NEW</li>
+<li>RUNNABLE</li>
+<li>BLOCKED</li>
+<li>WAITING</li>
+<li>TIME_WAITING</li>
+<li>TERMINAL</li>
+</ol>
+<p>为什么Java的线程状态有六中状态</p>
+<h3 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h3><blockquote>
+<p>JSON WEB TOKEN</p>
+<ul>
+<li>header</li>
+<li>reload</li>
+<li>signature</li>
+</ul>
+</blockquote>
+<h2 id="18、ConcurrentHash"><a href="#18、ConcurrentHash" class="headerlink" title="18、ConcurrentHash"></a>18、ConcurrentHash</h2><blockquote>
+<p>线程安全的key-value集合类，相对于Hashtable</p>
+</blockquote>
+<p>使用了分段锁的设计原则。</p>
+<h4 id="1、JDK1-7"><a href="#1、JDK1-7" class="headerlink" title="1、JDK1.7"></a>1、JDK1.7</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcurrentHashMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">ConcurrentMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt;, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 通过分段式锁进行</span></span><br><span class="line">	<span class="keyword">final</span> Segment&lt;K,V&gt;[] segments;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Segement实现可重入锁的实现</span></span><br><span class="line">      <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Segment</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">ReentrantLock</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">      	<span class="keyword">transient</span> <span class="keyword">volatile</span> HashEntry&lt;K,V&gt;[] table;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">      <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">HashEntry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> hash;</span><br><span class="line">        <span class="keyword">final</span> K key;</span><br><span class="line">        <span class="keyword">volatile</span> V value;</span><br><span class="line">        <span class="keyword">volatile</span> HashEntry&lt;K,V&gt; next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">       Segment&lt;K,V&gt; s;</span><br><span class="line">  <span class="comment">// ConcurrentHashMap不支持key和value为null</span></span><br><span class="line">       <span class="keyword">if</span> (value == <span class="keyword">null</span>)</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">       <span class="keyword">int</span> hash = hash(key);</span><br><span class="line">       <span class="keyword">int</span> j = (hash &gt;&gt;&gt; segmentShift) &amp; segmentMask;</span><br><span class="line">       <span class="keyword">if</span> ((s = (Segment&lt;K,V&gt;)UNSAFE.getObject          <span class="comment">// nonvolatile; recheck</span></span><br><span class="line">            (segments, (j &lt;&lt; SSHIFT) + SBASE)) == <span class="keyword">null</span>) <span class="comment">//  in ensureSegment</span></span><br><span class="line">           s = ensureSegment(j);</span><br><span class="line">  <span class="comment">// 最终使用的是Segement的put方法</span></span><br><span class="line">       <span class="keyword">return</span> s.put(key, hash, value, <span class="keyword">false</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Segement ReetrantLock 线程安全</p>
+<h4 id="2、JDK1-8"><a href="#2、JDK1-8" class="headerlink" title="2、JDK1.8"></a>2、JDK1.8</h4><p>1.8 Synchonized+CAS乐观锁</p>
+<p>CAS在查找替换，1.8锁头节点</p>
+<h2 id="19、Mysql的MVCC"><a href="#19、Mysql的MVCC" class="headerlink" title="19、Mysql的MVCC"></a>19、Mysql的MVCC</h2><blockquote>
+<p>MVCC(Multi-version concurrency control)又叫做多版本并发控制。代替锁来实现数据库的隔离性。</p>
+</blockquote>
+<p>在InnoDB的聚簇索引中，局促索引中有两个必要的隐藏列</p>
+<ul>
+<li>Trx_id：这个ID用来储存每次对该条举措索引记录进行修改的事务ID。递增。</li>
+<li>roll_point：存储一个指针，这个指针这条聚簇索引的上一个版本的位置，通过他获取上一个版本的记录信息。</li>
+</ul>
+<p>MVCC只在数据库隔离界别为读已提交(RC)，可重复度读(RR)两种模式下生效。其他模式不兼容。</p>
+<p>Mysql通过undo log实现了数据的多版本</p>
+<h2 id="20、volatile作用"><a href="#20、volatile作用" class="headerlink" title="20、volatile作用"></a>20、volatile作用</h2><blockquote>
+<p>valatile修饰的变量能够保证可见性，并防止指令重排序</p>
+</blockquote>
+<blockquote>
+<p>synchonized修饰的代码块能够保证代码的原子性和可见性。</p>
+</blockquote>
+<p>valitile能解决</p>
+<ul>
+<li>保证了不同线程对该变量操作的内存可见性</li>
+<li>禁止指令重排序</li>
+<li>但是不能保证操作的原子性</li>
+</ul>
+<blockquote>
+<p>Java虚拟机规范试图定义一种Java内存模型（JMM）,来屏蔽掉各种硬件和操作系统的内存访问差异，让Java程序在各种平台上都能达到一致的内存访问效果。简单来说，由于CPU执行指令的速度是很快的，但是内存访问的速度就慢了很多，相差的不是一个数量级，所以搞处理器的那群大佬们又在CPU里加了好几层高速缓存。</p>
+</blockquote>
+<p><img src="/Users/admin/Documents/%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/%E6%9E%B6%E6%9E%84%E5%B8%88%E4%B9%8B%E8%B7%AF/resource/image-20220316145443987.png" alt="image-20220316145443987"></p>
+<p>vaitile能解决并发问题中的有序性和可见性，按时</p>
+<h2 id="21、Redis的rehash内部实现"><a href="#21、Redis的rehash内部实现" class="headerlink" title="21、Redis的rehash内部实现"></a>21、Redis的rehash内部实现</h2><p>在redis中，键值对(key-value pair)，字典底层是通过哈希列来实现的，通过哈希表中的节点保存字段中的键值对。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* hash表结构定义 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dictht</span> &#123;</span> </span><br><span class="line">    dictEntry **table;   <span class="comment">// 哈希表数组</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> size;  <span class="comment">// 哈希表的大小</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> sizemask; <span class="comment">// 哈希表大小掩码</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> used;  <span class="comment">// 哈希表现有节点的数量</span></span><br><span class="line">&#125; dictht;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 哈希桶 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dictEntry</span> &#123;</span> </span><br><span class="line">    <span class="keyword">void</span> *key;     <span class="comment">// 键定义</span></span><br><span class="line">    <span class="comment">// 值定义</span></span><br><span class="line">    <span class="class"><span class="keyword">union</span> &#123;</span> </span><br><span class="line">        <span class="keyword">void</span> *val;    <span class="comment">// 自定义类型</span></span><br><span class="line">        <span class="keyword">uint64_t</span> u64; <span class="comment">// 无符号整形</span></span><br><span class="line">        <span class="keyword">int64_t</span> s64;  <span class="comment">// 有符号整形</span></span><br><span class="line">        <span class="keyword">double</span> d;     <span class="comment">// 浮点型</span></span><br><span class="line">    &#125; v;     </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dictEntry</span> *<span class="title">next</span>;</span>  <span class="comment">//指向下一个哈希表节点</span></span><br><span class="line">&#125; dictEntry;</span><br></pre></td></tr></table></figure>
+
+<p>Redis 哈希表中的table数组存放着哈希桶结构（dictEntry），里面就是Redis的键值对；类似Java实现的HashMap，Redis的dictEntry也是通过链表（next指针）方式来解决hash冲突：</p>
+<blockquote>
+<p>Redis Dict 中定义了两张哈希表，是为了后续字典的扩展作Rehash之用：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 字典结构定义 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dict</span> &#123;</span> </span><br><span class="line">    dictType *type;  <span class="comment">// 字典类型</span></span><br><span class="line">    <span class="keyword">void</span> *privdata;  <span class="comment">// 私有数据</span></span><br><span class="line">    dictht ht[<span class="number">2</span>];    <span class="comment">// 哈希表[两个]</span></span><br><span class="line">    <span class="keyword">long</span> rehashidx;   <span class="comment">// 记录rehash 进度的标志，值为-1表示rehash未进行</span></span><br><span class="line">    <span class="keyword">int</span> iterators;   <span class="comment">//  当前正在迭代的迭代器数</span></span><br><span class="line">&#125; dict;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>![image-20220316144721437](/Users/admin/Library/Application Support/typora-user-images/image-20220316144721437.png)</p>
+<p><strong>总结一下：</strong></p>
+<ul>
+<li>在Cluster模式下，一个Redis实例对应一个RedisDB(db0);</li>
+<li>一个RedisDB对应一个Dict;</li>
+<li>一个Dict对应2个Dictht，正常情况只用到ht[0]；ht[1] 在Rehash时使用。</li>
+</ul>
+<h2 id="22、AQS"><a href="#22、AQS" class="headerlink" title="22、AQS"></a>22、AQS</h2><blockquote>
+<p>AbstractQueueSynconizer,中文名为抽象的队列同步器，在AQS内部有一个资源访问的状态status和一个FIFO的双向队列，用来保存等待共享资源的变量的等待线程。基本上juc包下的并发类都是基于AQS来实现的，比如ReentratLock,Semaphore,CountDownLatch,CyclicBarrier等</p>
+</blockquote>
+<h3 id="1、semaphore"><a href="#1、semaphore" class="headerlink" title="1、semaphore"></a>1、semaphore</h3><blockquote>
+<p>信号量，juc包下的工具类，用来公职同事访问特定资源的线程数。，内部内置了Syn锁，基于AQS实现。</p>
+<p>核心方法有acquire和release();</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">        Semaphore semaphore;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Task</span><span class="params">(Semaphore semaphore, String tname)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(tname);</span><br><span class="line">            <span class="keyword">this</span>.semaphore = semaphore;</span><br><span class="line">            <span class="comment">//this.setName(tname);</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//semaphore.acquireUninterruptibly();</span></span><br><span class="line">                semaphore.acquire();<span class="comment">//获取公共资源</span></span><br><span class="line"></span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;:aquire() at time:&quot;</span> + System.currentTimeMillis());</span><br><span class="line">                Thread.sleep(<span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line">                semaphore.release();</span><br><span class="line"></span><br><span class="line">                <span class="comment">/*if(semaphore.tryAcquire(500,TimeUnit.MILLISECONDS))&#123;</span></span><br><span class="line"><span class="comment">                    System.out.println(Thread.currentThread().getName()+&quot;:aquire() at time:&quot;+System.currentTimeMillis());</span></span><br><span class="line"><span class="comment">                    Thread.sleep(5000);</span></span><br><span class="line"><span class="comment">                    semaphore.release();//释放公共资源</span></span><br><span class="line"><span class="comment">                &#125;else&#123;</span></span><br><span class="line"><span class="comment">                    fallback();</span></span><br><span class="line"><span class="comment">                &#125;*/</span></span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Acquire()可以相应中断，抛出异常。</p>
+<h3 id="2、CountDownLatch"><a href="#2、CountDownLatch" class="headerlink" title="2、CountDownLatch"></a>2、CountDownLatch</h3><blockquote>
+<p>ConntDownLatch是JDK提供的同步工具，可以让一个或者多个线程等待，一致等待其他线程完成一组操作。</p>
+</blockquote>
+<p>countDown()。计数器减1.当调用await()方法时，计数器加1.当计数器大于0时候线程会被阻塞，一致到计数器</p>
+<p>核心方法，countDown(),await();</p>
+<h3 id="3、CyclicBarrier"><a href="#3、CyclicBarrier" class="headerlink" title="3、CyclicBarrier"></a>3、CyclicBarrier</h3><blockquote>
+<p>一个同步辅助，他允许一组线程的所有等待同时达到共同屏障点</p>
+</blockquote>
+<p>核心方法awate()</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tank</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zhangyong3214.github.io/2022/04/05/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86-2022/">https://zhangyong3214.github.io/2022/04/05/知识整理/知识点梳理-2022/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://zhangyong3214.github.io" target="_blank">孤独者のtank</a> 许可协议。转载请注明来自 <a href="https://zhangyong3214.github.io" target="_blank">tankの记忆</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/">后端技术</a></div><div class="post_share"><div class="social-share" data-image="/images/basic/standup.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat_pay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat_pay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/04/05/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/netty%E7%9F%A5%E8%AF%86%E7%82%B9/"><img class="prev-cover" src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/04/05/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/Spring%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/"><img class="next-cover" src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/04/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Spring/" title="Spring技术笔记"><img class="cover" src="/images/cover/20210921172234.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-05</div><div class="title">Spring技术笔记</div></div></a></div><div><a href="/2022/04/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/RabbitMQ/" title="RabbitMQ消息中间件技术笔记"><img class="cover" src="/images/cover/RabbitMQ_cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-05</div><div class="title">RabbitMQ消息中间件技术笔记</div></div></a></div><div><a href="/2022/04/05/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/0%E3%80%81Java%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8DO/" title="Java中的各种O"><img class="cover" src="/images/basic/standup.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-05</div><div class="title">Java中的各种O</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tank_head.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tank</div><div class="author-info__description">欢迎来到tank的博客....</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangyong3214"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhangyong3214" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到tank的个人微博，对本站的文章和技术问题有疑问和建议请联系作者：QQ：616278895</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2022-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86"><span class="toc-text">2022-知识点梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81redis-keys%E6%89%A7%E8%A1%8C%E4%BA%86%E4%BC%9A%E6%80%8E%E4%B9%88%E6%A0%B7"><span class="toc-text">1、redis keys执行了会怎么样</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81redis%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF-%E7%A9%BF%E9%80%8F"><span class="toc-text">2、redis缓存击穿 穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81-zookeeper-eureka%E5%8C%BA%E5%88%AB"><span class="toc-text">3、 zookeeper eureka区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-text">相同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-text">不同点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81dubbo-robin%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">4、dubbo robin负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-text">Dubbo负载均衡算法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81-spring%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">5、 spring中的设计模式和用法示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="toc-text">装饰器模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">模板设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%96%E7%95%A5%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">策略设计模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E6%9C%80%E8%BF%91100%E4%B8%87%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">6、 数据库查询最近100万的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81mysql-acid%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81"><span class="toc-text">7、mysql acid怎么保证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81mysql-b-%E6%A0%91%E5%92%8Cb%E6%A0%91-avl%E6%A0%91%E5%8C%BA%E5%88%AB"><span class="toc-text">8、mysql b+树和b树 avl树区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81redis%E5%AE%95%E6%9C%BA%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">9、分布式锁redis宕机怎么办</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%E3%80%81dubbo-zookeeper%E9%9B%86%E7%BE%A4%E5%AE%95%E6%9C%BA%E8%BF%98%E8%83%BD%E5%8F%91%E7%8E%B0%E5%90%97"><span class="toc-text">10、dubbo zookeeper集群宕机还能发现吗</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dubbo%E9%9B%86%E7%BE%A4%E9%80%9A%E8%BF%87zk%E4%BD%9C%E4%B8%BA%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%EF%BC%8CZK%E9%9B%86%E7%BE%A4%E5%AE%95%E6%9C%BA%EF%BC%8Cdubbo%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%98%E8%83%BD%E8%A2%AB%E5%8F%91%E7%8E%B0%E4%B9%88"><span class="toc-text">dubbo集群通过zk作为注册中心，ZK集群宕机，dubbo客户端还能被发现么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dubbo-%E7%9A%84%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83zk%E9%9B%86%E7%BE%A4%E5%AE%95%E6%9C%BA%E5%90%8E%E8%BF%98%E8%83%BD%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8%E4%B9%88"><span class="toc-text">dubbo 的注册中心zk集群宕机后还能重新启动么</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11%E3%80%81springboot-properties-yaml%E8%AF%BB%E5%8F%96%E9%A1%BA%E5%BA%8F"><span class="toc-text">11、springboot properties yaml读取顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12%E3%80%81dubbo-properties-xml%E8%AF%BB%E5%8F%96%E9%A1%BA%E5%BA%8F"><span class="toc-text">12、dubbo properties xml读取顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13%E3%80%81Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">13、Java类加载的过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14%E3%80%81%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="toc-text">14、类加载器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15%E3%80%81-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE"><span class="toc-text">15、 双亲委派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16%E3%80%81%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E5%8D%8F%E8%AE%AE"><span class="toc-text">16、数据一致性协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#zab%E5%8D%8F%E8%AE%AE"><span class="toc-text">zab协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Raft%E5%8D%8F%E8%AE%AE"><span class="toc-text">Raft协议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap"><span class="toc-text">HashMap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#put-key-value"><span class="toc-text">put(key,value)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get"><span class="toc-text">get</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%87%A0%E7%A7%8D%E7%8A%B6%E6%80%81%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="toc-text">17、线程的几种状态及其转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA-%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="toc-text">JAVA 线程状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JWT"><span class="toc-text">JWT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18%E3%80%81ConcurrentHash"><span class="toc-text">18、ConcurrentHash</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81JDK1-7"><span class="toc-text">1、JDK1.7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81JDK1-8"><span class="toc-text">2、JDK1.8</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19%E3%80%81Mysql%E7%9A%84MVCC"><span class="toc-text">19、Mysql的MVCC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20%E3%80%81volatile%E4%BD%9C%E7%94%A8"><span class="toc-text">20、volatile作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21%E3%80%81Redis%E7%9A%84rehash%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0"><span class="toc-text">21、Redis的rehash内部实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22%E3%80%81AQS"><span class="toc-text">22、AQS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81semaphore"><span class="toc-text">1、semaphore</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81CountDownLatch"><span class="toc-text">2、CountDownLatch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81CyclicBarrier"><span class="toc-text">3、CyclicBarrier</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86IDEA%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6/" title="吐血整理IDEA必备插件(๑•̀ㅂ•́)و✧，让撸码效率提升1000%"><img src="/images/cover/idea-plugins.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="吐血整理IDEA必备插件(๑•̀ㅂ•́)و✧，让撸码效率提升1000%"/></a><div class="content"><a class="title" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86IDEA%E5%BF%85%E5%A4%87%E6%8F%92%E4%BB%B6/" title="吐血整理IDEA必备插件(๑•̀ㅂ•́)و✧，让撸码效率提升1000%">吐血整理IDEA必备插件(๑•̀ㅂ•́)و✧，让撸码效率提升1000%</a><time datetime="2022-04-05T09:32:31.592Z" title="发表于 2022-04-05 17:32:31">2022-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%85%8D%E8%B4%B9%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%A5%9E/" title="军事级别安全强度，免费密码管理工具KeePass，永远滴神"><img src="/images/cover/KeePass.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="军事级别安全强度，免费密码管理工具KeePass，永远滴神"/></a><div class="content"><a class="title" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E5%85%8D%E8%B4%B9%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%A5%9E/" title="军事级别安全强度，免费密码管理工具KeePass，永远滴神">军事级别安全强度，免费密码管理工具KeePass，永远滴神</a><time datetime="2022-04-05T09:32:31.592Z" title="发表于 2022-04-05 17:32:31">2022-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E4%B8%BAMacOS%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%82%AB%E9%85%B7%E7%BB%88%E7%AB%AF-/" title="为MacOS打造自己炫酷终端-Iterm2+oh-my-zsh"><img src="/images/cover/iterm2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为MacOS打造自己炫酷终端-Iterm2+oh-my-zsh"/></a><div class="content"><a class="title" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E4%B8%BAMacOS%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%82%AB%E9%85%B7%E7%BB%88%E7%AB%AF-/" title="为MacOS打造自己炫酷终端-Iterm2+oh-my-zsh">为MacOS打造自己炫酷终端-Iterm2+oh-my-zsh</a><time datetime="2022-04-05T09:32:31.591Z" title="发表于 2022-04-05 17:32:31">2022-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/" title="Git笔记-常用命令以及日常操作技巧汇总"><img src="/images/cover/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git笔记-常用命令以及日常操作技巧汇总"/></a><div class="content"><a class="title" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/" title="Git笔记-常用命令以及日常操作技巧汇总">Git笔记-常用命令以及日常操作技巧汇总</a><time datetime="2022-04-05T09:32:31.591Z" title="发表于 2022-04-05 17:32:31">2022-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="IDEA常用快捷键(Mac版)"><img src="/images/cover/idea.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IDEA常用快捷键(Mac版)"/></a><div class="content"><a class="title" href="/2022/04/05/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="IDEA常用快捷键(Mac版)">IDEA常用快捷键(Mac版)</a><time datetime="2022-04-05T09:32:31.591Z" title="发表于 2022-04-05 17:32:31">2022-04-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/images/basic/standup.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By tank</div><div class="footer_custom_text">个人知识整理，持续更新中...</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/chocolate.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="安静,独行,十七,黎明,火炉,tank,善良,开心,货车,士兵" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
